@@ -3,3 +3,15 @@ plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
 }
+
+buildscript {
+    // ► Repos donde buscará el plugin
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // ► Plugin de Hilt con SU versión
+        classpath("com.google.dagger:hilt-android-gradle-plugin:2.48")
+    }
+}
