@@ -1,10 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="8dp"
     card_view:cardElevation="2dp"
-    card_view:cardCornerRadius="6dp">
+    card_view:cardCornerRadius="8dp">
 
     <LinearLayout
         android:orientation="vertical"
@@ -14,16 +15,19 @@
 
         <TextView
             android:id="@+id/tvTitle"
-            style="@style/TextAppearance.Material3.TitleMedium"/>
+            style="@style/TextAppearance.Material3.TitleMedium"
+            android:textColor="?attr/colorOnSurface"/>
 
         <TextView
             android:id="@+id/tvDesc"
             style="@style/TextAppearance.Material3.BodyMedium"
-            android:layout_marginTop="4dp"/>
+            android:layout_marginTop="4dp"
+            android:textColor="?attr/colorOnSurfaceVariant"/>
 
         <TextView
             android:id="@+id/tvTime"
             style="@style/TextAppearance.Material3.LabelSmall"
-            android:layout_marginTop="4dp"/>
+            android:layout_marginTop="4dp"
+            android:textColor="?attr/colorOutline"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
