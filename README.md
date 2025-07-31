@@ -46,6 +46,45 @@ Esta aplicación Android permite gestionar tareas de forma offline y sincronizar
 
 ---
 
+## 🧠 Estructura del Proyecto
+
+El proyecto sigue una Clean Architecture con separación por capas y responsabilidades bien definidas:
+```
+
+com.example.offlinetasks
+├── data                # Origen de datos, mapeadores
+│ ├── dto               # Modelos API (llegarán más adelante)
+│ ├── local             # Room (Entity, DAO, DB)
+│ ├── mapper            # TaskEntity ⇆ Task / TaskDto
+│ ├── remote            # Placeholder para Retrofit (futuro)
+│ └── repository        # TaskRepositoryImpl, DataSources
+│
+├── di # Inyección de dependencias (Hilt)
+│ ├── DatabaseModule.kt
+│ ├── RepositoryModule.kt
+│ ├── UseCaseModule.kt
+│ └── WorkManagerModule.kt            # Factory personalizada (opcional)
+│
+├── domain                     # Lógica pura
+│ ├── model                    # Task (business object)
+│ ├── repository               # TaskRepository (interface)
+│ └── usecase                  # AddTask, GetTasks, SyncTasks …
+│
+├── sync                       # Sincronización (WorkManager)
+│ └── TaskSyncWorker.kt
+│
+├── ui # Presentación (MVVM)
+│ ├── main
+│ │ ├── MainViewModel.kt           # MainActivity / MainFragment
+│ │ ├── model                      # UiState, UiEvent
+│ │ └── mapper                     # Task ⇆ TaskUiModel
+│ └── addtask                      # DialogFragment (si lo separas)
+│
+└── utils # Utilidades
+└── ConnectivityObserver.kt
+
+---
+
 ## 👤 Autor
 
 Nombre: Cristian Paez
