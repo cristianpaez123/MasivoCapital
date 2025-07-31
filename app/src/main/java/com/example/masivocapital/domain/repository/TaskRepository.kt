@@ -10,5 +10,5 @@ interface TaskRepository {
 
     suspend fun getPending(): List<Task>
 
-    suspend fun markSynced(ids: List<Long>)
+    suspend fun sync()
 }

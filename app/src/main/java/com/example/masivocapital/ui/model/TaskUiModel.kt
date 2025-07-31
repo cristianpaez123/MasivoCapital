@@ -17,5 +17,5 @@ fun Task.toUi(): TaskUiModel =
         id,
         title,
         description,
-        SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date(createdAt))
+        SimpleDateFormat("HH:mm, dd/MM/yyyy", Locale.getDefault()).format(Date(createdAt))
     )

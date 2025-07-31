@@ -17,4 +17,10 @@ interface TaskDao {
 
     @Update
     suspend fun update(task: TaskEntity)
+
+    @Query("SELECT * FROM tasks WHERE id = :id LIMIT 1")
+    suspend fun getById(id: Long): TaskEntity?
+
+    @Query("UPDATE tasks SET synced = 1 WHERE id IN (:ids)")
+    suspend fun markSynced(ids: List<Long>)
 }
