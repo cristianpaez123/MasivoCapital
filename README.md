@@ -1,6 +1,6 @@
 # 🛒 Aplicación de Búsqueda y Visualización de Productos
 
-Esta aplicación Android ppermite gestionar tareas de forma offline y sincronizarlas automáticamente con un servidor REST cuando se detecta conexión a Internet. Está diseñado para integrarse fácilmente a una aplicación Android mayor, siguiendo los principios de **Clean Architecture**.
+Esta aplicación Android permite gestionar tareas de forma offline y sincronizarlas automáticamente con un servidor REST cuando se detecta conexión a Internet. Está diseñado para integrarse fácilmente a una aplicación Android mayor, siguiendo los principios de **Clean Architecture**.
 
 ---
 
