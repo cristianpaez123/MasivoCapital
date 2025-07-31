@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.masivocapital.R
 import com.example.masivocapital.databinding.ActivityMainBinding
 import com.example.masivocapital.databinding.DialogAddTaskBinding
@@ -23,13 +24,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
 
-        // RecyclerView
-        binding.rvTasks.adapter = adapter
+        binding.rvTasks.apply {
+            layoutManager = LinearLayoutManager(this@MainActivity)
+            adapter = this@MainActivity.adapter
+        }
 
-        // FAB
         binding.fabAdd.setOnClickListener { showAddDialog() }
 
-        // State collector
         lifecycleScope.launchWhenStarted {
             viewModel.state.collectLatest(adapter::submitList)
         }
